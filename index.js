@@ -1,4 +1,3 @@
-
 var data = {
     cTemp: '',
     fTemp: ''
@@ -22,25 +21,17 @@ var options = {
             }
         }).then(function (res) {
         
-            // Store the post data to a variable
-            //post = data;
-         // var locationText = document.getElementById('location');
            document.getElementById('location').textContent = res.name + "," + res.sys.country;
            document.getElementById('temp').textContent = Math.floor(res.main.temp);
-           console.log(res);
-           console.log(res.name);
-
+           document.getElementById('description').textContent = res.weather[0].main;
+           document.getElementById('image').src = res.weather[0].icon;
+           
+           // store c & f temps in data obj
            data.cTemp = Math.floor(res.main.temp);
-
            // F = C * 1.8 + 32
            data.fTemp = Math.floor(res.main.temp * 1.8 + 32);
-           //console.log(data.cTemp);
 
         });
-
-    // console.log(`Latitude : ${crd.latitude}`);
-    // console.log(`Longitude: ${crd.longitude}`);
-    // console.log(`More or less ${crd.accuracy} meters.`);
   }
   
   function error(err) {
@@ -50,26 +41,23 @@ var options = {
   
     navigator.geolocation.getCurrentPosition(success, error, options);
 
-    function myFunction() {
+    function getTemp() {
         var cTemp = document.getElementById("cTemp");
         if (cTemp.style.display === "none") {
+            document.getElementById('temp').textContent = data.cTemp;
+            console.log(data.cTemp)
             cTemp.style.display = "inline-block";
+            
         } else {
             cTemp.style.display = "none";
+            document.getElementById('temp').textContent = data.fTemp;
         }
 
          var fTemp = document.getElementById("fTemp");
+         
          fTemp.classList.toggle("fTempShow");
-
-         console.log(data.fTemp);
-
      }
         
-    
-    // setTimeout(()=>{
-    //    getData();
-    // }, 2000)
-   
   
     
     

@@ -33,3 +33,16 @@
 .fTempShow{
     display: inline-block;
 }
+
+
+h3{
+    font-size: 3rem;
+}
+
+span{
+    font-size: 3rem;
+    color: #000;
+}
+span:hover{
+    cursor: pointer;
+}
