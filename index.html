@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>local weather</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <div>
-     
+    <div class="main-wrap">
+      <div class="container">
+          <h1>Local Weather</h1>
+          <h3 id="location"> </h3>
+          <h4 id="temp"></h4><span id="cTemp" onclick="toF()"> C</span><span id="fTemp" class="test " onclick="toC()">F</span><br />
+          <button onclick="myFunction()">Try it</button>
+      </div>
     </div>
  
 
