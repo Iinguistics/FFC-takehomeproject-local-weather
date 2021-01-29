@@ -3,9 +3,8 @@
     padding: 0;
   }
 
-.main-wrap{
+  .main-wrap{
     background-color: #233554;
-    
 }
 
 .container{
@@ -15,6 +14,7 @@
     color: #ffffff;
     font-family: 'Yusei Magic', sans-serif;
     height: 100vh;
+    background-color: #233554;
 }
 
 
